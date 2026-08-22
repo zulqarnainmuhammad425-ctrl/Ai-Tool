@@ -15,7 +15,7 @@ if api_key:
     
     if st.button("Generate Answer"):
         if user_prompt:
-            model = genai.GenerativeModel("gemini-1.5-flash")
+("gemini-1.5-flash-latest")
             response = model.generate_content(user_prompt)
             st.write("### Result:")
             st.write(response.text)
