@@ -1,9 +1,9 @@
 import streamlit as st
 import google.generativeai as genai
 
-st.set_page_config(page_title="Jannat AI Tool", page_icon="🤖")
+st.set_page_config(page_title="AI Tool", page_icon="🤖")
 
-st.title("🤖 Jannat AI Tool")
+st.title("🤖 AI Tool")
 st.write("Apna question ya topic likhein aur AI aapko answer dega:")
 
 api_key = st.text_input("Enter your Gemini API Key:", type="password")
@@ -15,7 +15,7 @@ if api_key:
     
     if st.button("Generate Answer"):
         if user_prompt:
-("gemini-1.5-flash-latest")
+            model = genai.GenerativeModel("gemini-1.5-flash-latest")
             response = model.generate_content(user_prompt)
             st.write("### Result:")
             st.write(response.text)
