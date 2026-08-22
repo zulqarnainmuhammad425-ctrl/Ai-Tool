@@ -10,7 +10,6 @@ api_key = st.text_input("Enter your Gemini API Key:", type="password")
 
 if api_key:
     try:
-        # New Google GenAI Client
         client = genai.Client(api_key=api_key)
         
         user_prompt = st.text_area("Aap kya poochhna chahte hain?")
@@ -18,9 +17,9 @@ if api_key:
         if st.button("Generate Answer"):
             if user_prompt:
                 with st.spinner("Answer generate ho raha hai..."):
-                    # Updated modern model call
+                    # Updated to latest model name
                     response = client.models.generate_content(
-                        model="gemini-2.5-flash",
+                        model="gemini-3.6-flash",
                         contents=user_prompt,
                     )
                     st.write("### Result:")
